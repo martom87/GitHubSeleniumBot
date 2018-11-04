@@ -23,6 +23,8 @@ public class App extends WebDriverSetup {
     public void logIn() {
         GitHubLogin loginGithub = new GitHubLogin(driver);
         navigateToURL(BASE_URL);
+        loginGithub.logIn("bla", "blah");
+
     }
 
 
