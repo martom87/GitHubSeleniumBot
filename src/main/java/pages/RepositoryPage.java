@@ -9,7 +9,7 @@ public class RepositoryPage {
 
     WebDriver driver;
     @FindBy(xpath = "//*[@id=\"js-pjax-container\"]/div/div[2]/div[3]/div[1]/form/div[2]/a")
-    private WebElement newRepository;
+    private WebElement newRepositoryButton;
 
     public RepositoryPage(WebDriver driver) {
         this.driver = driver;
@@ -18,6 +18,6 @@ public class RepositoryPage {
     }
 
     public void createNewRepository() {
-        newRepository.click();
+        newRepositoryButton.click();
     }
 }

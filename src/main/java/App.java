@@ -61,6 +61,16 @@ public class App extends WebDriverSetup {
         repositoryPage.createNewRepository();
     }
 
+    public void goBackToMainPage() {
+        NewRepository newRepository = new NewRepository(driver);
+        newRepository.goToRepositoriesPage();
+    }
+
+    public void logOut() {
+        GitHubMainPage gitHubMainPage = new GitHubMainPage(driver);
+        gitHubMainPage.logOut();
+    }
+
 
     public static void main(String args[]) {
         App app = new App();
@@ -71,7 +81,8 @@ public class App extends WebDriverSetup {
         app.showRepositories();
         app.movePage();
         app.makeNewRepository();
-
+        app.goBackToMainPage();
+        app.logOut();
 
     }
 

@@ -17,6 +17,10 @@ public class GitHubMainPage {
     private WebElement repositoriesButton;
 
 
+    @FindBy(xpath = "//*[@id=\"user-links\"]/li[3]/details/details-menu/ul/li[10]/form/button")
+    private WebElement logoutButton;
+
+
     public GitHubMainPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -25,6 +29,11 @@ public class GitHubMainPage {
     public void goToRepositories() {
         spanButton.click();
         repositoriesButton.click();
+    }
+
+    public void logOut() {
+        spanButton.click();
+        logoutButton.click();
     }
 
 

@@ -18,7 +18,7 @@ public class PageMovements {
         driver.manage().window().maximize();
     }
 
-    public void scrollUpAndDown()  {
+    public void scrollUpAndDown() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,100)", "");
 
