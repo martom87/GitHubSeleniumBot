@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GitHubLogin {
 
+    private WebDriver driver;
+
+    public static final String BASE_URL = "https://github.com/login";
+
     @FindBy(xpath = "//*[@id=\"login_field\"]")
     private WebElement userGitHubLogin;
 
@@ -22,9 +26,6 @@ public class GitHubLogin {
     @FindBy(xpath = "//*[@id=\"user-links\"]/li[3]/details/details-menu/ul/li[10]/form/button")
     private WebElement logoutButton;
 
-    private WebDriver driver;
-
-    public static final String BASE_URL = "https://github.com/login";
 
     public GitHubLogin(WebDriver driver) {
         this.driver = driver;
@@ -36,8 +37,8 @@ public class GitHubLogin {
         userGitHubLogin.sendKeys(login);
         userGitHubPassword.sendKeys(password);
         loginButton.click();
-     //   spanButton.click();
-     //   logoutButton.click();
+        //  spanButton.click();
+        //   logoutButton.click();
 
     }
 }
