@@ -3,9 +3,6 @@ package pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-
 public class PageMovements {
 
     private WebDriver driver;
