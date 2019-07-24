@@ -25,12 +25,4 @@ public class PageMovements {
 
     }
 
-    public void scrollToBegining() {
-        try {
-            Robot robot = new Robot();
-            robot.keyRelease(KeyEvent.VK_PAGE_UP);
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
-    }
 }
