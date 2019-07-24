@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class RepositoryPage {
 
     WebDriver driver;
-    @FindBy(xpath = "//*[@id=\"js-pjax-container\"]/div/div[2]/div[3]/div[1]/form/div[2]/a")
+    @FindBy(xpath = "//*[@id=\"js-pjax-container\"]/div/div[3]/div[3]/div[1]/form/div[2]/a")
     private WebElement newRepositoryButton;
 
     public RepositoryPage(WebDriver driver) {

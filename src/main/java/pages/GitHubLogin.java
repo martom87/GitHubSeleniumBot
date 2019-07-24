@@ -17,7 +17,7 @@ public class GitHubLogin {
     @FindBy(xpath = "//*[@id=\"password\"]")
     private WebElement userGitHubPassword;
 
-    @FindBy(xpath = "//*[@id=\"login\"]/form/div[3]/input[3]")
+    @FindBy(xpath = "//*[@id=\"login\"]/form/div[3]/input[4]")
     private WebElement loginButton;
 
     @FindBy(xpath = "//*[@id=\"user-links\"]/li[3]/details/summary/span")

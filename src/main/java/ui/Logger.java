@@ -21,9 +21,9 @@ public class Logger {
         int result = JOptionPane.showConfirmDialog(null, myPanel,
                 "Enter GitHub user name and password", JOptionPane.OK_CANCEL_OPTION);
         if (result == JOptionPane.OK_OPTION) {
-            System.out.println("x value: " + userNameInput.getText());
+            System.out.println("user_name value: " + userNameInput.getText());
             userName = userNameInput.getText();
-            System.out.println("y value: " + userPasswordInput.getText());
+            System.out.println("user_password value: " + userPasswordInput.getText());
             userPassword = userPasswordInput.getText();
         }
 

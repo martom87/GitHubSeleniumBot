@@ -10,14 +10,17 @@ public class GitHubMainPage {
 
     private WebDriver driver;
 
-    @FindBy(xpath = "//*[@id=\"user-links\"]/li[3]/details/summary/span")
+    @FindBy(xpath = "/html/body/div[1]/header/div[8]/details/summary/span")
     private WebElement spanButton;
 
-    @FindBy(xpath = "//*[@id=\"user-links\"]/li[3]/details/details-menu/ul/li[4]")
+    @FindBy(xpath = "/html/body/div[1]/header/div[6]/details/summary/span")
+    private WebElement logoutSpanButton;
+
+    @FindBy(xpath = "/html/body/div[1]/header/div[8]/details/details-menu/a[2]")
     private WebElement repositoriesButton;
 
 
-    @FindBy(xpath = "//*[@id=\"user-links\"]/li[3]/details/details-menu/ul/li[10]/form/button")
+    @FindBy(xpath = "/html/body/div[1]/header/div[6]/details/details-menu/form/button")
     private WebElement logoutButton;
 
 
@@ -32,7 +35,7 @@ public class GitHubMainPage {
     }
 
     public void logOut() {
-        spanButton.click();
+        logoutSpanButton.click();
         logoutButton.click();
     }
 
