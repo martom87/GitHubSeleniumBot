@@ -1,4 +1,4 @@
-package validations;
+package utilis.validations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,23 +6,23 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class PresenceValidator {
+public class ElementsValidatorHelper {
 
     private WebDriver driver;
 
-    public PresenceValidator(WebDriver driver) {
+    ElementsValidatorHelper(WebDriver driver) {
         this.driver = driver;
     }
 
 
-    public void validateElementPresence2(List<WebElement> webElements) {
+    void validateElementPresence(List<WebElement> webElements) {
         for (WebElement webElement : webElements) {
             existsElement(webElement);
         }
     }
 
 
-    public void existsElement(WebElement webElement) {
+    void existsElement(WebElement webElement) {
         try {
             driver.findElement(By.id(webElement.getAttribute("id")));
 

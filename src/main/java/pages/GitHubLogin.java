@@ -4,24 +4,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import validations.PresenceValidator;
+import utilis.validations.ElementsValidator;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-public class GitHubLogin {
+public class GitHubLogin extends ElementsValidator {
 
     private WebDriver driver;
-    private PresenceValidator presenceValidator;
-    private List<WebElement> webElements;
+    private ElementsValidator elementsValidator;
 
     public static final String BASE_URL = "https://github.com/login";
 
     @FindBy(xpath = "//*[@id=\"login_field\"]")
     private WebElement userGitHubLogin;
 
-    @FindBy(xpath = "//*[@id=\"password1\"]")
+    @FindBy(xpath = "//*[@id=\"password\"]")
     private WebElement userGitHubPassword;
 
     @FindBy(xpath = "//*[@id=\"login\"]/form/div[3]/input[4]")
@@ -35,15 +32,14 @@ public class GitHubLogin {
 
 
     public GitHubLogin(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
     }
 
     public void logIn(String login, String password) {
-        webElements = Arrays.asList(userGitHubLogin, userGitHubPassword);
-        presenceValidator = new PresenceValidator(driver);
-        presenceValidator.validateElementPresence2(webElements);
+        this.performValidationOn(Arrays.asList(userGitHubLogin, userGitHubPassword));
         userGitHubLogin.sendKeys(login);
         userGitHubPassword.sendKeys(password);
         loginButton.click();
