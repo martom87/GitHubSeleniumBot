@@ -4,17 +4,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import validations.PresenceValidator;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class GitHubLogin {
 
     private WebDriver driver;
+    private PresenceValidator presenceValidator;
+    private List<WebElement> webElements;
 
     public static final String BASE_URL = "https://github.com/login";
 
     @FindBy(xpath = "//*[@id=\"login_field\"]")
     private WebElement userGitHubLogin;
 
-    @FindBy(xpath = "//*[@id=\"password\"]")
+    @FindBy(xpath = "//*[@id=\"password1\"]")
     private WebElement userGitHubPassword;
 
     @FindBy(xpath = "//*[@id=\"login\"]/form/div[3]/input[4]")
@@ -34,11 +41,11 @@ public class GitHubLogin {
     }
 
     public void logIn(String login, String password) {
+        webElements = Arrays.asList(userGitHubLogin, userGitHubPassword);
+        presenceValidator = new PresenceValidator(driver);
+        presenceValidator.validateElementPresence2(webElements);
         userGitHubLogin.sendKeys(login);
         userGitHubPassword.sendKeys(password);
         loginButton.click();
-        //  spanButton.click();
-        //   logoutButton.click();
-
     }
 }

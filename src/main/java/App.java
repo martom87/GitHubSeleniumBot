@@ -32,12 +32,9 @@ public class App extends WebDriverSetup {
     }
 
     public void logIn() {
-
-
         GitHubLogin loginGithub = new GitHubLogin(driver);
         navigateToURL(BASE_URL);
         loginGithub.logIn(user.getUsername(), user.getPassword());
-
     }
 
     public void showRepositories() {
