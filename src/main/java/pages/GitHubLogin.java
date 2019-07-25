@@ -4,10 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilis.validations.ElementsValidator;
 
-public class GitHubLogin {
+import java.util.Arrays;
+
+public class GitHubLogin extends ElementsValidator {
 
     private WebDriver driver;
+    private ElementsValidator elementsValidator;
 
     public static final String BASE_URL = "https://github.com/login";
 
@@ -28,17 +32,16 @@ public class GitHubLogin {
 
 
     public GitHubLogin(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
     }
 
     public void logIn(String login, String password) {
+        this.performValidationOn(Arrays.asList(userGitHubLogin, userGitHubPassword));
         userGitHubLogin.sendKeys(login);
         userGitHubPassword.sendKeys(password);
         loginButton.click();
-        //  spanButton.click();
-        //   logoutButton.click();
-
     }
 }
